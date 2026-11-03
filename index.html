@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>LL(1) and SLR Parser Lab</title>
+  <link rel='stylesheet' href='css/style.css'>
+</head>
+<body>
+<main>
+  <h1>LL(1) and SLR Parser Lab</h1>
+  <label>Grammar (one rule per line, symbols separated by spaces, eps for epsilon)</label>
+  <textarea id='g' rows='7'>E -> E + T | T
+T -> T * F | F
+F -> ( E ) | id</textarea>
+  <label>Input string (tokens separated by spaces)</label>
+  <input id='inp' value='id + id * id'>
+  <label>Error test strings (one per line)</label>
+  <textarea id='errs' rows='3'>id + * id
+( id + id
+id id</textarea>
+  <button id='go'>Analyze</button> <span id='msg' class='er'></span>
+  <nav class='tabs'>
+    <button data-tab='p0'>1 Grammar</button>
+    <button data-tab='p1'>2 LL(1)</button>
+    <button data-tab='p2'>3 SLR</button>
+    <button data-tab='p3'>4 Comparison</button>
+  </nav>
+  <section id='p0' class='pn on'></section>
+  <section id='p1' class='pn'></section>
+  <section id='p2' class='pn'></section>
+  <section id='p3' class='pn'></section>
+</main>
+<script type='module' src='js/ui.js'></script>
+</body>
+</html>
